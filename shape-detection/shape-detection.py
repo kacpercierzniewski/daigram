@@ -9,7 +9,7 @@ capture = cv2.VideoCapture(0)
 capture.set(3, frameWidth)
 capture.set(4, frameHeight)
 
-IMG_URL = "all shapes with bg.jpg"
+IMG_URL = "stick connections.jpg"
 
 
 def noop(_):
@@ -40,9 +40,9 @@ def dilateImage(img):
     kernel = np.ones((5,5))
     return cv2.dilate(img, kernel, iterations=1)
     
-def drawContours(IMG_URL):
-    img = processImage(getImageFromPath(IMG_URL))
-    imgContour = getImageFromPath(IMG_URL).copy();
+def drawContours(imgName, imgToModify):
+    img = processImage(imgToModify)
+    imgContour =imgToModify.copy();
     contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     cv2.drawContours(imgContour, contours, -1, (0,255,0), 7)
     for cnt in contours:
@@ -55,7 +55,7 @@ def drawContours(IMG_URL):
         cv2.putText(imgContour, "Area:" + str(int(area)), (x ,y + 25) , cv2.FONT_HERSHEY_COMPLEX, 0.7, (0,0,0), 1)
         cv2.putText(imgContour, "Position:x= " + str(x), (x ,y + 50)  , cv2.FONT_HERSHEY_COMPLEX, 0.7, (0,0,0), 1)
         cv2.putText(imgContour, "Position:y= " + str(y), (x ,y + 75)  , cv2.FONT_HERSHEY_COMPLEX, 0.7, (0,0,0), 1)
-    cv2.imshow(IMG_URL + " stick with contours", imgContour)
+    cv2.imshow(imgName + " with contours", imgContour)
 
 
 cv2.namedWindow("Thresholds")
@@ -71,6 +71,9 @@ while True:
     cv2.imshow(IMG_URL, getImageFromPath(IMG_URL))
     # cv2.imshow("free connection with line", processImage(getImageFromPath('free connection with line.jpg')))
     # cv2.imshow("stick connections", processImage(getImageFromPath('stick connections.jpg')))
-    drawContours(IMG_URL)
+    drawContours(IMG_URL, getImageFromPath(IMG_URL))
+    
+    #video processing
+    # drawContours('Video',img)
     if(cv2.waitKey(1) & 0xFF == ord('q')):
         break
