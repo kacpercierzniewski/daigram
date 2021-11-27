@@ -1,0 +1,13 @@
+{
+  "name": "object-detection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Synergy ",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "canvas",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "diagram-object-recognition": "1.0.0",
+    "p5": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/p5": "1.3.1",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4"
+  }
+}
