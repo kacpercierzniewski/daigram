@@ -1,0 +1,34 @@
+{
+  "name": "diagram-object-recognition",
+  "version": "1.0.0",
+  "description": "Train and classify diagram objects",
+  "author": "Kacper Cierzniewski <kacper.cierzniewski@gmail.com>",
+  "homepage": "https://github.com/peleek/image-processing#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peleek/image-processing.git"
+  },
+  "dependencies": {
+    "ml5": "^0.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/peleek/image-processing/issues"
+  },
+  "devDependencies": {
+    "@types/webgl2": "^0.0.6",
+    "typescript": "^4.5.2"
+  }
+}
