@@ -1,9 +1,0 @@
-names:
-- arrow
-- circle
-- diamond
-- square
-- triangle
-nc: 5
-train: Hand-written-shapes-processed-21/train/images
-val: Hand-written-shapes-processed-21/valid/images

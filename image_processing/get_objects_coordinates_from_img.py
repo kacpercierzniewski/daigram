@@ -7,8 +7,6 @@ def denormalize_pixels(img, label:str):
 
     x=int(size[0]*(normalized_values[1] - random.randrange(0, 2)* normalized_values[3]/2.0))
     y=int(size[1]*(normalized_values[2] - random.randrange(0, 2)* normalized_values[4]/2.0))
-    # x=int(size[0]*(normalized_values[1]))
-    # y=int(size[1]*(normalized_values[2]))
     width=int(size[0]*normalized_values[3])
     height=int(size[1]*normalized_values[4])
     return {"x": x,"y":y, "width":width,"height":height}
